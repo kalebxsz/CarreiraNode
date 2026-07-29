@@ -1,16 +1,9 @@
-import http from 'http';
+import "dotenv/config";
+import app from "./src/app.js";
 
-const PORT = 3000
-const rotas = {
-    "/": "curso de Node.js",
-    "/Livros": "Entrei na rota livros",
-    "/Autores": "Entrei na rota Autores"
-}
-const server = http.createServer((req, res)=>{
-    res.writeHead(200, {"content-type": "text/plain"});
-    res.end(rotas[req.url])
-})
+const PORT = 3000;
 
-server.listen(PORT, ()=> {
-    console.log("Servidor escutando!")
+app.listen(PORT, () => {
+  console.log("servidor escutando!");
 });
+
